@@ -3,7 +3,7 @@ import os
 os.environ["OMP_NUM_THREADS"] = "1"
 
 from src.data_loader import load_data
-from src.model import train_kmeans, save_model
+from src.model import train_model, save_model
 
 
 
@@ -14,11 +14,11 @@ def main():
         train_features = ["Age", "Annual_Income", "Spending_Score"]
         k = 5
 
-        model, labels, inertia = train_kmeans(df[train_features], k)
+        model, labels, inertia = train_model(df[train_features], k)
         save_model(model)
 
     
 
 
-if __name__ == "__main__":
-    main()
+
+main()
